@@ -96,4 +96,5 @@
 
 [画面遷移図](https://www.figma.com/file/b2eg08fgpCZsViWha4ok0T/Emergency_Call_Support(Flow-Diagram)?type=whiteboard&node-id=0%3A1&t=87TxCsT2z5kEfRZS-1)
 
-[ER図](https://drive.google.com/file/d/1T4_LI3SraHF1XoAFl2yyrew9va6pUNoo/view?usp=sharing)
+[ER図](https://drive.google.com/file/d/1-xSW5JZVod1zqIBsZsH9mkjcK8eCGUhc/view?usp=sharing) 
+=> Donesテーブルにuser_idカラムの追加、Itemsテーブルのvideo_urlカラムをitem_urlに変更

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'user_sessions/new'
+  get 'user_sessions/create'
+  get 'user_sessions/destroy'
+  get 'users/new'
+  get 'users/create'
 
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :users, only: %i[new create]
@@ -23,4 +28,5 @@ Rails.application.routes.draw do
 
   if Rails.env.development? || Rails.env.test?
     get 'login_as/:user_id', to: 'development/sessions#login_as'
+  end
 end

@@ -1,15 +1,14 @@
-# version: '3'
 services:
   db:
     image: postgres:latest
-    platform: linux/amd64
+    platform: linux/arm64
     environment:
       TZ: Asia/Tokyo
       POSTGRES_PASSWORD: password
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - 5434:5432
+      - 5432:5432
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"

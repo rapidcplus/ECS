@@ -23,4 +23,5 @@ Rails.application.routes.draw do
 
   if Rails.env.development? || Rails.env.test?
     get 'login_as/:user_id', to: 'development/sessions#login_as'
+  end
 end

@@ -1,0 +1,32 @@
+<h1>送信アイテム新規作成</h1>
+<%= form_with model: @item, url: "#", local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: '例：心臓マッサージ' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+YouTube shortsの動画URLを入力してください
+
+  <div class="form-group">
+    <%= f.label :item_url %>
+    <%= f.text_field :item_url, class: 'form-control' %>
+  </div>
+
+<%# ↓アスペクト比16:9の動画プレビューにした時の表示を確認用 %>
+<iframe width="360" height="640"
+        src="https://www.youtube.com/embed/動画ID"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<%# ここまで %>
+
+<div id="preview"></div>
+
+  <div class="actions">
+    <%= f.submit '作成', class: 'btn btn-primary' %>
+  </div>
+<% end %>

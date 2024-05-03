@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'items/index'
+  get 'items/show'
+  get 'items/new'
+  get 'items/edit'
+  get 'items/create'
+  get 'items/update'
+  get 'items/destroy'
   get 'user_sessions/new'
   get 'user_sessions/create'
   get 'user_sessions/destroy'

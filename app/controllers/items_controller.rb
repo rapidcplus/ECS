@@ -2,10 +2,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[edit update destroy]
 
   def index
-    @item = Item.includes(:user)
+    @items = Item.includes(:user).order(created_at: :desc)
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -13,13 +14,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = current_user.items.find(params[:id])
   end
 
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     if @item.save
-      redirect_to index_path, success: t('items.create.success')
+      redirect_to items_url, success: t('items.create.success')
     else
       flash.now[:danger] = t('items.create.failure')
       render :new, status: :unprocessable_entity

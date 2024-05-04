@@ -1,0 +1,13 @@
+<div class="col-sm-5 col-lg-4 mb-3">
+  <div id="post-id-<%= item.id %>">
+    <div class="card">
+      <%= link_to (item_path(item)), class: "btn",data: { turbo: false } do %>
+        <div class="card-body text-center">
+            <%= item.title %>
+            <%# <%= item.tag.name %>
+            <%= item.updated_at.to_date %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

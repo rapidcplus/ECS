@@ -1,5 +1,5 @@
 <h1>新しいコンテンツ</h1>
-<%= form_with model: @item, url: "#", local: true do |f| %>
+<%= form_with model: @item, class: "new_item", local: true do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: '例：心臓マッサージ' %>

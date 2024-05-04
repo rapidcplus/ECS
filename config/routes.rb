@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'items/index'
+  get 'items/show'
+  get 'items/new', to: 'items#new', as: 'new_item'
+  get 'items/edit'
+  get 'items/create'
+  get 'items/update'
+  get 'items/destroy'
   get 'user_sessions/new'
   get 'user_sessions/create'
   get 'user_sessions/destroy'
@@ -7,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :users, only: %i[new create]
+  resources :items
 
   root 'static_pages#top'
 

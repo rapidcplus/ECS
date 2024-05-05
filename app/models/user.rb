@@ -13,7 +13,10 @@ class User < ApplicationRecord
     
     # enum role: { general: 0, admin: 1 }
     
-    def mine?(object)
-        id == object.user_id
+    # def mine?(object)
+    #     id == object.user_id
+    # end
+    def own?(item)
+        self.id == item.user_id
     end
 end

@@ -29,6 +29,13 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item = current_user.items.find(params[:id])
+    if @item.update(item_params)
+      redirect_to items_url(@item), success: t('defaults.flash_message.updated', item: Item.model_name.human)
+    else
+      flash.now[:danger] = t('defaults.flash_message.not_updated', item: Item.model_name.human)
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -38,5 +45,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:title, :item_url)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

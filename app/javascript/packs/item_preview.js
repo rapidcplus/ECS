@@ -3,10 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const previewContainer = document.getElementById('preview'); // プレビューを表示するコンテナを特定する
   
     itemUrlInput.addEventListener('input', function () {
-      console.log('イベント発火');
   
       const url = this.value;
-      // YouTube ShortのURLからIDを抽出（パラメータ含む）
+      // YouTube ShortのURLからvideoIDを抽出（パラメータ含む）
       const videoId = url.includes('youtube.com/shorts/') ? url.split('youtube.com/shorts/')[1] : null;
   
       // videoIdが取得できた場合、アスペクト比16:9の動画プレビューを表示
